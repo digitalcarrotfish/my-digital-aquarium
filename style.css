@@ -1,0 +1,51 @@
+/* 基础样式和千禧年配色 */
+:root{
+  --bg: #00111a;
+  --glass: rgba(255,255,255,0.06);
+  --neon: #00ffff;
+  --accent: #c77dff;
+  --muted: #aeb8c0;
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: "Helvetica Neue", Arial, sans-serif;background: radial-gradient(1200px 600px at 10% 10%, rgba(0,50,70,0.2), transparent), var(--bg); color:var(--muted);}
+
+/* 头部 */
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:18px 36px;backdrop-filter: blur(6px);background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+.logo{color:var(--neon);letter-spacing:1px;margin:0;font-weight:700}
+nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:14px}
+nav a:hover{color:var(--neon);text-decoration:underline}
+
+/* 鱼缸区 */
+.aquarium-wrap{position:relative;height:60vh;max-height:560px;margin:28px auto;width:92%;border-radius:16px;overflow:hidden;box-shadow: 0 8px 40px rgba(0,0,0,0.6);border:1px solid var(--glass-border);background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));}
+#aquarium{position:absolute;inset:0;}
+
+/* 叠加文字 */
+.overlay{position:relative;z-index:6;padding:28px;color:var(--muted);text-align:left}
+.overlay h2{color:var(--neon);margin:0 0 8px 0}
+
+/* 鱼样式（SVG 通过 JS 插入） */
+.fish{
+  position:absolute;
+  width:64px;
+  height:32px;
+  transform-origin:center;
+  pointer-events:auto;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
+}
+
+/* 博客段 */
+.latest{width:92%;margin:24px auto;padding:12px;border-radius:10px;background:var(--glass);border:1px solid var(--glass-border)}
+.latest h3{color:var(--neon);margin:6px 0}
+.latest a{color:var(--muted);text-decoration:none}
+.latest a:hover{color:var(--accent)}
+
+/* 底部 */
+footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+
+/* 响应式 */
+@media (max-width:600px){
+  .overlay{padding:16px}
+  .fish{width:48px;height:24px}
+}
